@@ -18,13 +18,15 @@ class Game:
                 player.frames.append(Frame())
                 current_frame = player.frames[-1]
                 current_frame.deliver()
-                print(f"{player.name}: {current_frame.num_pins_dropped}", end="")
+                print(
+                    f"{player.name}: {current_frame.delivery_1}, {current_frame.delivery_2}", end="")
                 if current_frame.strike:
                     print("  Strike!")
                 elif current_frame.spare:
                     print("  Spare!")
                 else:
                     print()
+
             self.update_current_scores()
             for score in self.current_scores:
                 print(score)

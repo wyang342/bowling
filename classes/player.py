@@ -11,9 +11,12 @@ class Player:
             for i in range(len(self.frames)):
                 self.current_score += self.frames[i].num_pins_dropped
                 if self.frames[i].strike:
-                    pass
+                    if self.frames[i + 1].strike:
+                        pass
+                    else:
+                        self.current_score += self.frames[i+1].num_pins_dropped
                 elif self.frames[i].spare:
-                    pass
+                    self.current_score += self.frames[i+1].delivery_1
         except:
             return "N/A"
 
